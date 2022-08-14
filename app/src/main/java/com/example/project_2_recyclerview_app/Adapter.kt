@@ -16,11 +16,10 @@ class Adapter(
     private val context: Context
 ) : RecyclerView.Adapter<Adapter.SneakersViewHolder>() {
 
-
-    class SneakersViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.item_title)
-        val imageView: ImageView = view.findViewById(R.id.item_image)
-    }
+  class SneakersViewHolder(itemLayout: View) : RecyclerView.ViewHolder(itemLayout) {
+      val imageView: ImageView = itemLayout.findViewById(R.id.item_image)
+      val textView: TextView = itemLayout.findViewById(R.id.item_title)
+  }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SneakersViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)

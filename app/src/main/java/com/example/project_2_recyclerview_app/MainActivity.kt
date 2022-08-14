@@ -13,13 +13,10 @@ class MainActivity : AppCompatActivity() {
         // Connect the adapter with the data here
         // Bind the recyclerview and the adapter here
 
-        // Data source
         val sneakersList = Datasource().loadMune()
 
-        // adapter
         val adapter = Adapter(sneakersList, this)
 
-        // recyclerView
         val recyclerView : RecyclerView = findViewById(R.id.Sneakers)
 
         recyclerView.adapter = adapter
