@@ -3,7 +3,6 @@ package com.example.project_2_recyclerview_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
-import com.example.project_2_recyclerview_app.adapter.restaurantAdapter
 import com.example.project_2_recyclerview_app.data.Datasource
 
 class MainActivity : AppCompatActivity() {
@@ -15,13 +14,13 @@ class MainActivity : AppCompatActivity() {
         // Bind the recyclerview and the adapter here
 
         // Data source
-        val resturntList = Datasource().loadMune()
+        val sneakersList = Datasource().loadMune()
 
         // adapter
-        val adapter = restaurantAdapter(resturntList, this)
+        val adapter = Adapter(sneakersList, this)
 
         // recyclerView
-        val recyclerView : RecyclerView = findViewById(R.id.rv_resturnt)
+        val recyclerView : RecyclerView = findViewById(R.id.Sneakers)
 
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)

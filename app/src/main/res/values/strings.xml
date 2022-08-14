@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Project-2-RecyclerView-App</string>
-    <string name="burger">burger</string>
-    <string name="fettuccine">fettuccine</string>
-    <string name="pasta">pasta</string>
-    <string name="margherita">margherita</string>
-    <string name="steak">steak</string>
-    <string name="pizza">pizza</string>
+    <string name="adidas1">adidas1</string>
+    <string name="adidas2">adidas2</string>
+    <string name="adidas3">adidas3</string>
+    <string name="adidas4">adidas4</string>
+    <string name="adidas5">adidas5</string>
+    <string name="adidas6">adidas6</string>
 </resources>

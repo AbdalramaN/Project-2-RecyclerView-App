@@ -1,49 +1,41 @@
 package com.example.project_2_recyclerview_app
 
 import android.content.Context
-import android.service.autofill.Dataset
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.project_2_recyclerview_app.R
-import com.example.project_2_recyclerview_app.model.resturnt
+import com.example.project_2_recyclerview_app.model.Sneakers
+
 
 
 class Adapter(
-    private val dataset : List<resturnt>,
+    private val dataset : List<Sneakers>,
     private val context: Context
-) : RecyclerView.Adapter<Adapter.resturntViewHolder>() {
+) : RecyclerView.Adapter<Adapter.SneakersViewHolder>() {
 
 
-    // Adapter helper class to arrange data in layout file
-    class resturntViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class SneakersViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
         val imageView: ImageView = view.findViewById(R.id.item_image)
     }
 
-
-    // 3 functions
-    // تعرف ملف ال layout الخاص بالعنصر
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): resturntViewHolder {
-        // create a new view
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SneakersViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_layout, parent, false)
 
-        return resturntViewHolder(adapterLayout)
+        return SneakersViewHolder(adapterLayout)
     }
 
-    // تربط البيانات بالقالب الخاص بها بمساعدة ViewHolder
-    override fun onBindViewHolder(holder: resturntViewHolder, position: Int) {
-        // save the position of them (which item i'm dealing with)
+    override fun onBindViewHolder(holder: SneakersViewHolder, position: Int) {
         val item = dataset[position]
-        holder.textView.text = context.resources.getString(item.resturntStringId)
-        holder.imageView.setImageResource(item.resturntImageId)
+        holder.textView.setText(item.SneakersStringId)
+        holder.imageView.setImageResource(item.SneakersImageId)
+
     }
 
-    // تحدد عدد البيانات في القائمة
     override fun getItemCount() = dataset.size
 
 
